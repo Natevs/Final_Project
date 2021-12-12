@@ -1,6 +1,9 @@
 const express = require('express');
 var app = express();
-const config = require('./config/config');
+const mongoose = require('mongoose');
+const logger = require('./logger');
+const config = require('./config');
+const fs = require('fs'); 
 const models = fs.readdirSync(config.rootPath + '/app/models');
 models.forEach((model) => {
     require(config.rootPath + '/app/models/' + model);

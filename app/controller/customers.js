@@ -1,7 +1,7 @@
 //Good?
 const logger = require('../../config/logger');
 const Mongoose = require('mongoose');
-const Customers = Mongoose.model('Customers');
+const Customers = Mongoose.model('CustomerModel');
 
 getCustomers = (req, res, next) => {
     logger.log('Getting all customers', 'info');

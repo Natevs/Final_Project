@@ -1,10 +1,10 @@
 //Good?
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/users');
+const userController = require('../controller/users');
+const passport = require('passport');
 const requireAuth = passport.authenticate('jwt', { session: false });
 const passportService = require('../../config/passport');
-const passport = require('passport');
 
 const requireLogin = passport.authenticate('local', { session: false });
 
@@ -20,30 +20,4 @@ router.delete('/users/:id', requireAuth,userController.deleteUsers);
 
 router.route('/users/login').post(requireLogin, login);
 
-// router.patch('/', requireAuth,userController.updateUsers);
-
-// router.get('/', (req, res, next) =>{
-//     res.status(200).json('Customers Retrieved');
-// });
-
-// router.get('//:id', (req, res, next) =>{
-//     res.status(200).json('Customers' + req.params.id + 'Retrieved');
-// });
-
-// router.post('/', (req, res, next) =>{
-//     res.status(201).json(req.body);
-// });
-
-// router.put('/customers', (req, res, next) =>{
-//     logger.log('Getting all customers', 'info');
-//     res.status(200).json('Customers' + req.body.name + 'updated');
-// });
-
-// router.delete('//:id', (req, res, next) =>{
-//     res.status(204).json('Customers' + req.params.id + 'deleted');
-// });
-
-// router.get('/customers/:id', (req, res, next) => {
-//     res.status(200).json({id: req.params.id});
-// });
-// module.exports = router;
+module.exports = router;

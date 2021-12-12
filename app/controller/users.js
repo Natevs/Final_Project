@@ -1,7 +1,7 @@
 //Good?
 const logger = require('../../config/logger');
 const Mongoose = require('mongoose');
-const Users = Mongoose.model('Users');
+const Users = Mongoose.model('UserModel');
 
 getUsers = (req, res, next) => {
     logger.log('Getting all Users', 'info');
@@ -58,7 +58,7 @@ deleteUsers = (req, res, next) => {
 
 module.exports = {
     getUsers,
-    getUsers,
+    getUsersByID,
     createUsers,
     updateUsers,
     deleteUsers

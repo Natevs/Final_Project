@@ -1,6 +1,6 @@
 const path = require('path');
 //During the test the env variable is set to test
-const env = process.env.NODE_ENV || 'developement';
+const env = process.env.NODE_ENV || 'production';
 
 var config = {
        development: {
@@ -22,11 +22,12 @@ var config = {
               rootPath: path.normalize(__dirname + '/..'),
               app: { name: ' CRMLite' },
               port: 8080,
-              dbURL: 'mongodb+srv://VanSchyndel:<password>@cluster0.lkeht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority ',
+              dbURL: 'mongodb+srv://VanSchyndel:mongopassword@cluster0.lkeht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority ',
               secret: "thisistheencryptioncode"
               /*mongodb+srv://VanSchyndel:<password>@cluster0.lkeht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority*/
        }
 };
+
 module.exports = config[env];
 
 /*const { MongoClient } = require('mongodb');
