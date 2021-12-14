@@ -4,11 +4,6 @@ const mongoose = require('mongoose');
 const logger = require('./logger');
 const config = require('./config');
 const fs = require('fs'); 
-const models = fs.readdirSync(config.rootPath + '/app/models');
-models.forEach((model) => {
-    require(config.rootPath + '/app/models/' + model);
-});
-const routes = require('../app/routes/index');
 
 module.exports = function (app, config) {
     try {
@@ -26,6 +21,12 @@ module.exports = function (app, config) {
 }
 
 app.use(express.static(config.rootPath + '/public'));
+
+const models = fs.readdirSync(config.rootPath + '/app/models');
+models.forEach((model) => {
+    require(config.rootPath + '/app/models/' + model);
+});
+const routes = require('../app/routes/index');
 
 app.use(express.json());
 
@@ -56,6 +57,3 @@ app.use(function (err, req, res, next) {
     }
 });
 console.log("Starting application");
-
-
-
