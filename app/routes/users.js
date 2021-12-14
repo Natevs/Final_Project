@@ -8,7 +8,7 @@ const passport = require('passport');
 const requireLogin = passport.authenticate('local', { session: false });
 const requireAuth = passport.authenticate('jwt', { session: false });
 
-router.get('/',userController.getUsers);//needs event handlers
+router.get('/',userController.getUsers);
 
 router.get('/:id', requireAuth,userController.getUsersByID);
 

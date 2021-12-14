@@ -1,7 +1,7 @@
 //good? update like users?
 const express = require('express');
 const router = express.Router();
-const customerController = require('../controllers/customers');
+const customerController = require('../controller/customers');
 const passport = require('passport');
 const requireAuth = passport.authenticate('jwt', { session: false });
 

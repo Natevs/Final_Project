@@ -58,7 +58,7 @@ deleteCustomer = (req, res, next) => {
 
 module.exports = {
     getCustomers,
-    getCustomer,
+    getCustomerByID,
     createCustomer,
     updateCustomer,
     deleteCustomer
