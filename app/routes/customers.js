@@ -5,12 +5,14 @@ const customerController = require('../controllers/customers');
 const passport = require('passport');
 const requireAuth = passport.authenticate('jwt', { session: false });
 
-router.get('/customers', requireAuth,customerController.getCustomers);//needs event handlers
+router.get('/',customerController.getCustomers);//needs event handlers
 
-router.get('/customers/:id', requireAuth,customerController.getCustomerByID);
+router.get('/:id', requireAuth,customerController.getCustomerByID);
 
-router.post('/customers', requireAuth,customerController.updateCustomer);
+router.post('/',customerController.updateCustomer);
 
-router.put('/', requireAuth,customerController.createCustomer);
+router.put('/',customerController.createCustomer);
 
-router.delete('/customers/:id', requireAuth,customerController.deleteCustomer);
+router.delete('/:id', requireAuth,customerController.deleteCustomer);
+
+module.exports = router;
