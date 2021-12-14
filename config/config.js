@@ -7,7 +7,7 @@ var config = {
               rootPath: path.normalize(__dirname + '/..'),
               app: { name: ' CRMLite' },
               port: 80,
-              dbURL: 'mongodb://localhost/crmlite ',
+              dbURL: 'mongodb://localhost/CRMLite ',
               secret: "thisistheencryptioncode"
               //Mongo db uri mongodb+srv://VanSchyndel
        },
@@ -22,7 +22,7 @@ var config = {
               rootPath: path.normalize(__dirname + '/..'),
               app: { name: ' CRMLite' },
               port: 8080,
-              dbURL: 'mongodb+srv://VanSchyndel:mongopassword@cluster0.lkeht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority ',
+              dbURL: 'mongodb+srv://VanSchyndel:mongopassword@cluster0.lkeht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
               secret: "thisistheencryptioncode"
               /*mongodb+srv://VanSchyndel:<password>@cluster0.lkeht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority*/
        }
